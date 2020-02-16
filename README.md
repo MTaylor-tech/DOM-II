@@ -34,25 +34,31 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
 ## Task 2: Create Unique Event Listeners
 
 * [ ] Using your [index.js file](js/index.js), create 10 [unique event listeners](https://developer.mozilla.org/en-US/docs/Web/Events). using your creativity to make the Fun Bus site more interactive.  Here are some unique events you could try to use:
-	* [ ] `mouseover`
-	* [ ] `keydown`
-	* [ ] `wheel`
+	* [x] `mouseover`
+	* [x] `keydown`
+	* [x] `wheel`
 	* [ ] `drag / drop`
-	* [ ] `load`
+	* [x] `load`
 	* [ ] `focus`
-	* [ ] `resize`
+	* [x] `resize`
 	* [ ] `scroll`
 	* [ ] `select`
-	* [ ] `dblclick`
+	* [x] `dblclick`
+	* [x] `mouseenter`
+	* [x] `mouseleave`
+	* [x] `mouseout`
+	* [x] `contextmenu`
+	* [x] `dragstart`
+
 
 Using the 10 unique events, find ways to update the DOM in creative ways. For example you could change colors, animate objects, remove objects, etc.
 
-* [ ] Nest two similar events somewhere in the site and prevent the event propagation properly
+* [x] Nest two similar events somewhere in the site and prevent the event propagation properly
 * [ ] Stop the navigation items from refreshing the page by using `preventDefault()`
 
 ## Stretch Task:
 
-* [ ] Go look at [GSAP](https://greensock.com/) and implement the animations found in that library with your custom events.
+* [x] Go look at [GSAP](https://greensock.com/) and implement the animations found in that library with your custom events.
 
 ## Stretch assignment
 
