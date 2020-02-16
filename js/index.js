@@ -116,6 +116,7 @@ firstImage.addEventListener('mouseover', fadeOut);
 window.addEventListener('keydown', changeFirstImage);
 navItems.forEach(function (item) { item.addEventListener('mouseenter', fontChange); });
 navItems.forEach(function (item) { item.addEventListener('mouseleave', fontChangeBack); });
+navItems.forEach(function (item) { item.addEventListener("click", function(event) { event.preventDefault()}); });
 buttons.forEach(function (button) { button.addEventListener('click', pressButton); });
 window.addEventListener('load', loaded);
 contentImageBoxes.forEach(function (box, index) { box.addEventListener('mouseover', returnImgs.bind(null, index)); }, false);
