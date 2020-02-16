@@ -65,7 +65,7 @@ function fontChangePs () {
 
 function highlightP (index, event) {
     if (pSelected[index]) {
-      allPs[index].style.background = allPs[index].parentElement.style.background;
+      allPs[index].style.background = '';
     } else {
       allPs[index].style.background = 'yellow';
     }
@@ -81,7 +81,7 @@ function highlightDivs () {
       allDivs.forEach(function (div) { div.style.background = 'purple'});
       color = 'purple';
     }
-    allPs.forEach(function (p, index) { if (!pSelected[index]) { p.style.background = color; }});
+    allPs.forEach(function (p, index) { if (!pSelected[index]) { p.style.background = ''; }});
     buttons.forEach(function (btn) { btn.style.background = ''});
     divsHighlighted = !divsHighlighted;
 }
