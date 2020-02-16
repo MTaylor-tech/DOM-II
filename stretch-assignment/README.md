@@ -26,7 +26,7 @@ Topics:
   * [x] When a block is clicked, it should go to the top of the stack.
 
  Travelers:
-  * [ ] While a mouse is clicked down on a box, it should move to the right (It should coninuously move, there is no limit on how far it will go).
+  * [x] While a mouse is clicked down on a box, it should move to the right (It should coninuously move, there is no limit on how far it will go).
   
 ## Stretch Goals
   

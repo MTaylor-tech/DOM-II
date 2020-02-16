@@ -1,11 +1,13 @@
 const allBlocks = document.querySelectorAll('.block');
 let topOfStack = 100;
-let lefty = 0;
+let lefty = [];
 let myTimer;
 
 for (let i=0; i<allBlocks.length; i++) {
 	allBlocks[i].style.order = 100 + i;
 	allBlocks[i].style.left = 0;
+	allBlocks[i].style.position = `relative`;
+	lefty[i] = 0;
 }
 
 function clickBlock (index) {
@@ -19,16 +21,20 @@ function moveRight (index) {
 }
 
 function stepRight (index) { 
-	lefty++;
-	allBlocks[index].style.left = `${lefty}px`;
-	console.log(`stepRight: ${index}, ${allBlocks[index].style.left}`); 
+	leftyString = allBlocks[index].style.left.replace('px', '');
+	lefty[index] = parseInt(leftyString, 10);
+	lefty[index]++;
+	allBlocks[index].style.left = `${lefty[index]}px`;
+	console.log(`stepRight: ${index}, ${allBlocks[index].style.left}`);
+	if (lefty[index] >= 800) {
+		stop();
+	} 
 }
 
 function stop () {
 	window.clearInterval(myTimer);
-	lefty = 0;
 }
 
 allBlocks.forEach(function (block, index) { block.addEventListener('click', clickBlock.bind(null, index)); }, false);
 allBlocks.forEach(function (block, index) { block.addEventListener('mousedown', moveRight.bind(null, index)); }, false);
-allBlocks.forEach(function (block, index) { block.addEventListener('mouseup', stop); });
+window.addEventListener('mouseup', stop);
