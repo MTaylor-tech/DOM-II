@@ -1,7 +1,8 @@
 const allBlocks = document.querySelectorAll('.block');
 let topOfStack = 100;
 let lefty = [];
-let myTimer;
+let myTimer = [];
+let currentlyMoving = 0;
 
 for (let i=0; i<allBlocks.length; i++) {
 	allBlocks[i].style.order = 100 + i;
@@ -16,8 +17,10 @@ function clickBlock (index) {
 }
 
 function moveRight (index) {
+	currentlyMoving = index;
+	stop();
 	console.log(`moveRight: ${index}`);
-	myTimer = window.setInterval(stepRight, 10, index);
+	myTimer[index] = window.setInterval(stepRight, 10, index);
 }
 
 function stepRight (index) { 
@@ -31,10 +34,32 @@ function stepRight (index) {
 	} 
 }
 
+function moveLeft (index) {
+	currentlyMoving = index;
+	console.log(`moveLeft: ${index}`);
+	myTimer[index] = window.setInterval(stepLeft, 20, index);
+}
+
+function stepLeft (index) { 
+	leftyString = allBlocks[index].style.left.replace('px', '');
+	lefty[index] = parseInt(leftyString, 10);
+	lefty[index]--;
+	allBlocks[index].style.left = `${lefty[index]}px`;
+	console.log(`stepLeft: ${index}, ${allBlocks[index].style.left}`);
+	if (lefty[index] <= 0) {
+		stop();
+	} 
+}
+
 function stop () {
-	window.clearInterval(myTimer);
+	window.clearInterval(myTimer[currentlyMoving]);
+}
+
+function startLeft() {
+	stop();
+	moveLeft(currentlyMoving);
 }
 
 allBlocks.forEach(function (block, index) { block.addEventListener('click', clickBlock.bind(null, index)); }, false);
 allBlocks.forEach(function (block, index) { block.addEventListener('mousedown', moveRight.bind(null, index)); }, false);
-window.addEventListener('mouseup', stop);
+window.addEventListener('mouseup', startLeft);

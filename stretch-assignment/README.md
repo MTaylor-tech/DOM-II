@@ -36,8 +36,8 @@ Topics:
   
   Travelers:
     
-  * Give the travelers a limit on the distance it can travel.
-  * When the mouse button is released, it should travel back to its original position.
-  * A mouse down that occurs during a transition back to the original position should send it traveling to the right again  from it's current position.
+  * [x] Give the travelers a limit on the distance it can travel.
+  * [x] When the mouse button is released, it should travel back to its original position.
+  * [x] A mouse down that occurs during a transition back to the original position should send it traveling to the right again  from it's current position.
   
   You will be using `window.setInterval`. For this method, and any of those listed in the "Topics" section of this README, you are encouraged to use MDN as your resource for Documentation. MDN can be challenging to consume at first, so you may also use something like W3schools if the MDN documentation on a given subject is a bit too complicated.
