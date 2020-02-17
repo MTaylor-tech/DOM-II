@@ -32,7 +32,7 @@ Topics:
   
   Rockets:
     
-  * Animate the rockets, visually show them being transported to the top.
+  * [x] Animate the rockets, visually show them being transported to the top.
   
   Travelers:
     
